@@ -1,0 +1,888 @@
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+$red: #C92C22;
+$gray: #494949;
+$white: #E8E8E8;
+$brown: #744315;
+
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 992px;
+$huge: 1440px;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Racing Sans One', cursive;
+}
+
+
+.header {
+    width: 100%;
+    height: 100vh;
+    background: url(images/photo-of-black-audi-parked-on-roadside-1719648.jpg);
+    background-position: center;
+    background-position-x: 70%;
+    background-size: cover;
+
+    &--subpage {
+        height: 40vh;
+        background-position-y: 50%;
+        background-size: auto 100vh;
+    }
+
+
+    h1,
+    h2 {
+        margin: 0;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 48px;
+        color: $red;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        font-size: 24px;
+        color: $white;
+        font-weight: normal;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .title {
+        padding-top: 25vh;
+    }
+
+    @media only screen and (min-width: $tablet) {
+
+        h1 {
+            font-size: 72px;
+        }
+
+        h2 {
+            font-size: 36px;
+        }
+
+        .title {
+            position: absolute;
+            padding-top: 14vh;
+            padding-left: 8vw;
+        }
+
+        &--subpage {
+            background-size: cover;
+        }
+    }
+
+    @media only screen and (min-width: $huge) {
+        h1 {
+            font-size: 108px;
+        }
+
+        h2 {
+            font-size: 54px;
+        }
+    }
+}
+
+.navbar {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    z-index: 1;
+
+    ul {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-items: flex-end;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        border-radius: 20px;
+        box-shadow: 1px 1px 10px 0px #0000005e;
+
+        li {
+            transition: transform .2s ease-in-out;
+            margin: 10px;
+            display: none;
+        }
+
+        a {
+            font-family: 'Racing Sans One', cursive;
+            padding: 9px 20px;
+            font-size: 24px;
+            border: none;
+            border-radius: 20px;
+            text-decoration: none;
+            background-color: $red;
+            color: $white;
+            display: flex;
+            align-items: center;
+
+            &:hover {
+                background-color: $gray;
+                cursor: pointer;
+            }
+        }
+
+        .dropdown {
+            >a {
+                display: none;
+            }
+        }
+
+        .dropdown-content {
+            box-shadow: none;
+        }
+
+        &:hover {
+            background-color: $gray;
+
+            li {
+                display: block;
+            }
+
+            a {
+                background: transparent;
+            }
+        }
+    }
+
+    .menu {
+        width: 24px;
+        height: 3px;
+        background-color: $white;
+        margin-right: 12px;
+        position: relative;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 3px;
+            background-color: $white;
+        }
+
+        &::before {
+            top: -8px;
+        }
+
+        &::after {
+            bottom: -8px;
+        }
+
+    }
+
+    @media only screen and (min-width: $tablet) {
+        ul {
+            flex-direction: row;
+            box-shadow: none;
+
+            li {
+                display: block;
+
+                a {
+                    display: flex;
+
+                    &:hover {
+                        background-color: $gray;
+                    }
+                }
+            }
+
+            a {
+                display: none;
+                box-shadow: 1px 1px 10px 0px #0000005e;
+            }
+
+            &:hover {
+                background: transparent;
+
+                a {
+                    background: $red;
+                }
+            }
+
+            .dropdown {
+                >a {
+                    display: block;
+                }
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                min-width: 240px;
+                background-color: $red;
+                border-radius: 20px;
+                border-top-left-radius: 0;
+                z-index: 10;
+                padding: 0;
+                overflow: hidden;
+                box-shadow: 1px 1px 10px 0px #0000005e;
+
+                a {
+                    background-color: transparent;
+                    box-shadow: none;
+                }
+            }
+
+            .dropdown:hover {
+                .dropdown-content {
+                    display: block;
+
+                    a:hover {
+                        border-radius: 0;
+                    }
+                }
+
+                a {
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+            }
+        }
+
+
+    }
+
+}
+
+.rent {
+    background-color: $red;
+    border-radius: 20px;
+    padding: 20px 20px;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-25vh);
+
+    h1 {
+        font-weight: normal;
+        margin-top: 0;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    h2 {
+        font-weight: normal;
+        margin: 7px 0;
+        font-size: 24px;
+    }
+
+    &__form {
+        span {
+            display: flex;
+            justify-content: space-between;
+        }
+
+    }
+
+
+    .date {
+        width: 66%;
+        font-size: 14px;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 7px;
+            content: '';
+            background: url('images/icons/calendar.svg');
+            width: 20px;
+            height: 22px;
+        }
+    }
+
+    .time {
+        width: 32%;
+        font-size: 14px;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 7px;
+            content: '';
+            background: url('images/icons/clock.svg');
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    .car {
+        width: 100%;
+        font-size: 28px;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 7px;
+            content: '';
+            background: url('images/icons/car.svg');
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    input {
+        background-color: $white;
+        color: $gray;
+        border: none;
+        padding: 7px;
+        font-size: 20px;
+        width: 100%;
+        border-radius: 10px;
+        font-family: 'Racing Sans One', cursive;
+        font-weight: normal;
+        text-align: center;
+
+        &[type=date],
+        &[type=time],
+        &[type=text] {
+            padding-left: 34px;
+        }
+
+        &[type=text] {
+            text-align: left;
+            font-size: 24px;
+        }
+
+        &[type=submit] {
+            width: 100%;
+            margin-top: 24px;
+            background-color: $gray;
+            color: $white;
+            font-size: 24px;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    .checkbox,
+    .radio {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin: 16px 0;
+        cursor: pointer;
+        font-size: 22px;
+        user-select: none;
+
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        &:hover input~.checkmark {
+            background-color: $white;
+        }
+
+        input:checked~.checkmark:after {
+            display: block;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .checkmark:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid $gray;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+
+    .checkbox {
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: $white;
+        }
+
+        .checkmark:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid $gray;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+
+    .radio {
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: $white;
+            border-radius: 50%;
+        }
+
+        .checkmark:after {
+            top: 8px;
+            left: 8px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: $gray;
+        }
+    }
+
+    @media only screen and (min-width: $desktop) {
+        padding: 20px 8%;
+        margin: 0 20px;
+
+        &__form {
+            display: flex;
+            justify-content: space-between;
+
+            div {
+                width: 48%;
+            }
+        }
+
+        .car {
+            width: 70%;
+        }
+
+        input[type=submit] {
+            width: 26%;
+            margin-top: 0;
+        }
+    }
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    background: url(images/car-driving-keys-repair-97079.jpg);
+    background-position: 60%;
+    background-size: cover;
+
+}
+
+.content {
+    background-color: $gray;
+    color: $white;
+    font-size: 24px;
+
+    p {
+        margin: 0;
+        padding: 24px;
+    }
+
+    .pictures {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        padding-bottom: 60px;
+
+        img {
+            border-radius: 20px;
+            width: 66%;
+
+            &:nth-of-type(even) {
+                margin-left: auto;
+            }
+        }
+    }
+
+    &--map {
+        overflow-x: hidden;
+    }
+
+    &--gray {
+        background-color: $gray;
+
+        img {
+            width: 50%;
+            height: 50%;
+            margin: 0;
+            margin-bottom: -7px;
+        }
+    }
+
+    &--red {
+        background-color: $red;
+        text-align: center;
+    }
+
+    &--clock {
+        display: flex;
+        justify-content: center;
+    }
+
+    &--contact {
+        background-color: $red;
+        flex-direction: column;
+        padding: 10% 22px;
+
+        h2 {
+            font-weight: normal;
+            margin-top: 0;
+        }
+
+        p {
+            padding: 0;
+        }
+    }
+
+    &--car {
+        background-color: $red;
+        flex-direction: column;
+        padding: 8px;
+
+        h2 {
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        table {
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+            margin: 8px 0;
+
+            th {
+                padding: 4px 12px;
+                font-weight: normal;
+                font-size: 24px;
+                background-color: $gray;
+
+                &:first-of-type {
+                    margin-top: 4px;
+                }
+            }
+
+            td {
+                padding: 4px 12px;
+                font-size: 20px;
+                background-color: $white;
+                color: $gray;
+            }
+
+            tr {
+                display: flex;
+                flex-direction: column;
+
+                &:nth-of-type(odd) {
+                    td {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        input {
+            background-color: $white;
+            color: $gray;
+            border: none;
+            padding: 7px;
+            font-size: 20px;
+            width: 100%;
+            border-radius: 10px;
+            font-family: 'Racing Sans One', cursive;
+            font-weight: normal;
+            text-align: center;
+
+        }
+    }
+
+    &--converter {
+        background-color: $red;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 8px;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+            width: 100%;
+        }
+
+        h2 {
+            margin: 0;
+        }
+
+        p {
+            padding: 0;
+        }
+
+        input {
+            background-color: $white;
+            color: $gray;
+            border: none;
+            padding: 7px;
+            margin: 4px 0;
+            font-size: 20px;
+            border-radius: 10px;
+            font-weight: normal;
+            text-align: center;
+        }
+    }
+
+    @media only screen and (min-width: $tablet) {
+        display: flex;
+        padding: 64px;
+        align-items: center;
+
+        p {
+            padding: 0;
+        }
+
+        .pictures {
+            padding: 0;
+        }
+
+        &--map {
+            flex-direction: column;
+
+            img {
+                border-radius: 20px;
+            }
+        }
+
+        &--gray {
+            p {
+                margin-right: 64px;
+            }
+
+            img {
+                margin-bottom: 0;
+                width: 40%;
+                height: auto;
+                border-radius: 20px;
+            }
+        }
+
+        &--red {
+            flex-direction: row-reverse;
+
+            p {
+                margin-left: 64px;
+            }
+        }
+
+        &--clock {
+            padding: 0;
+        }
+
+        &--contact {
+            align-items: flex-start;
+        }
+
+        &--car {
+            align-items: stretch;
+
+            table {
+
+                th {
+                    margin-top: 4px;
+                    border-bottom: $red 2px solid;
+                }
+
+                td {
+                    border: $red 2px solid;
+                }
+
+                tr {
+                    display: table-row;
+
+                    &:nth-of-type(odd) {
+                        td {
+                            display: table-cell;
+                        }
+                    }
+
+                    &:first-of-type {
+                        th:first-of-type {
+                            border-top-left-radius: 20px;
+                        }
+
+                        th:last-of-type {
+                            border-top-right-radius: 20px;
+                        }
+                    }
+
+                    &:nth-last-of-type(2) {
+                        th:first-of-type {
+                            border-bottom-left-radius: 20px;
+                        }
+
+                        th:last-of-type {
+                            border-bottom-right-radius: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: $desktop) {
+        &--map {
+            p {
+                margin-bottom: 64px;
+            }
+        }
+
+        &--converter {
+            div {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+
+                input {
+                    width: 30%;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    color: $white;
+
+    .data {
+        background-color: $gray;
+        padding: 18px 22px;
+
+        h2,
+        h3 {
+            font-weight: normal;
+            margin: 0;
+        }
+
+        span {
+            margin: 9px 0;
+            display: flex;
+
+            &:nth-of-type(2) {
+                margin-left: 30px;
+            }
+
+            &:nth-of-type(3) {
+                margin-left: 60px;
+            }
+
+            &:nth-of-type(4) {
+                margin-left: 90px;
+            }
+
+            h3 {
+                margin-left: 8px;
+            }
+        }
+    }
+
+    .counter {
+        background-color: $red;
+        padding: 10px 22px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @media only screen and (min-width: $tablet) {
+        .data {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px;
+        }
+    }
+
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 4rem;
+    align-items: center;
+    text-align: center;
+    padding: 10rem 2rem;
+    width: 110rem;
+    margin: 0 auto;
+  
+    @media (max-width: 1150px) {
+      grid-template-columns: 1fr 1fr;
+      width: fit-content;
+    }
+  
+    @media (max-width: 800px) {
+      grid-template-columns: 1fr;
+      width: fit-content;
+    }
+  
+    &__box {
+      width: 33rem;
+      background-color: white;
+      box-shadow: 0px 20px 10px 0px rgb(0 0 0 / 8%);
+  
+      @media (max-width: 400px) {
+        width: 100%;
+      }
+  
+      &__img-div {
+        width: 100%;
+        height: auto;
+        background-color: #f6f6f6;
+        img {
+          width: 100%;
+        }
+      }
+  
+      &__descr {
+        color: $text-black;
+        padding: 3rem;
+  
+        h3 {
+          font-size: $h4-size;
+        }
+  
+        p {
+          font-size: $p-size;
+          font-weight: 500;
+          color: #777777;
+        }
+      }
+    }
+  }

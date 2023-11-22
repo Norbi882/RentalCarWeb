@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rental Car - wypożyczalnia samochodów</title>
+    <link rel="icon" href="favicon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="title">
+          <a href="home.html">
+            <h1>Rental Car</h1>
+            <h2>Wypożyczalnia samochodów</h2>
+          </a>
+        </div>
+        <nav class="navbar">
+          <ul>
+            <a href="javascript:void(0)"> <span class="menu"></span>Menu </a>
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">Oferta...</a>
+              <ul class="dropdown-content">
+                <a href="audi.html">Audi</a>
+                <a href="bmw.html">BMW</a>
+                <a href="mercedes-benz.html">Mercedes Benz</a>
+                <a href="porsche.html">Porsche</a>
+                <a href="others.html">Inne</a>
+                <a href="converter.html">Przelicznik</a>
+              </ul>
+            </li>
+
+            <li><a href="price_list.html">Cennik</a></li>
+            <li><a href="team.html">Zespół</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="main">
+        
+        <form class="rent" action="home.html" method="post">
+          <h1>Wypełnij formularz</h1>
+          <span class="rent__form">
+            <div>
+              <h2>Data i godzina odbioru</h2>
+              <span>
+                <label class="date"><input type="date" id="receive_data" name="receive_data" value="" /></label>
+                <label class="time"><input type="time" id="receive_time" name="receive_time" value="" /></label>
+              </span>
+            </div>
+            <div>
+              <h2>Data i godzina zwrotu</h2>
+              <span>
+                <label class="date"><input type="date" id="return_data" name="return_data" value="" /></label>
+                <label class="time"><input type="time" id="return_time" name="return_time" value="" /></label>
+              </span>
+            </div>
+          </span>
+          <span class="rent__form">
+            <div>
+              <h2>Imię</h2>
+              <input type="text" name="firstname" />
+            </div>
+            <div>
+              <h2>Nazwisko</h2>
+              <input type="text" name="lastname" />
+            </div>
+          </span>
+          <span class="rent__form">
+            <div>
+              <h2>Adres e-mail</h2>
+              <input type="email" name="email" />
+            </div>
+            <div>
+              <h2>Telefon</h2>
+              <input type="tel" name="telephone" />
+            </div>
+          </span>
+          <h2>Informacje dodatkowe</h2>
+          <span class="rent__form">
+            <div>
+              <label class="checkbox"
+                >Dodatkowy kierowca
+                <input type="checkbox" id="driver" name="driver" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="checkbox"
+                >Chcę otrzymać fakturę VAT
+                <input type="checkbox" id="vat" name="vat" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </span>
+          <span class="rent__form">
+            <div>
+              <h2>Posiadam prawo jazdy:</h2>
+              <label class="radio"
+                >krócej niż 2 lata
+                <input type="radio" checked="checked" name="radio" />
+                <span class="checkmark"></span>
+              </label>
+              <label class="radio"
+                >ponad 2 lata
+                <input type="radio" checked="checked" name="radio" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </span>
+          <h2>Samochody</h2>
+          <span class="rent__form">
+            <label class="car"><input type="text" placeholder="Wszystkie" name="car" value="" /></label>
+            <input type="submit" value="Wyślij" />
+          </span>
+        </form>
+      </main>
+
+      <footer class="footer">
+        <!-- stopka -->
+        <div class="data">
+          <div class="data-address">
+            <h2>Rental Car</h2>
+            <h3>ul. Weteranów 25</h3>
+            <h3>61-144 Poznań</h3>
+          </div>
+          <div class="data-time">
+            <h2>Godziny pracy</h2>
+            <h3>Pon - Pt: 9:00 - 21:00</h3>
+            <h3>Sob: 9:00 - 20:00</h3>
+            <h3>Niedz: 10:00 - 16:00</h3>
+          </div>
+          <div class="data-info">
+            <span>
+              <img src="images/icons/phone.svg" />
+              <h3><a href="tel:+48722756844" class="phone-number">72 275 68 44</a></h3>
+            </span>
+            <span>
+              <img src="images/icons/email.svg" />
+              <h3><a href="mailto:info@rentalcar.com" class="mailto">info@rentalcar.com</a></h3>
+            </span>
+            <span>
+              <img src="images/icons/facebook.svg" />
+              <h3>Zobacz profil</h3>
+            </span>
+            <span>
+              <img src="images/icons/pointer.svg" />
+              <h3><a href="https://www.google.com/maps?q=ul.+Weteranów+25,61-144+Poznań" target="_blank" class="google-maps">Mapa dojazdu</a></h3>
+            </span>
+          </div>
+        </div>
+        <div class="counter">
+          <div class="time">Czas: <span id="time"></span></div>
+        </div>
+      </footer>
+      <script src="scripts/time.js"></script>
+    </div>
+    </script>
+  </body>
+</html>
